@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    用户名: <input type="text" name="user" id="user">
+    密码 : <input type="password" name="pass" id="pass">
+    <input type="button" value="注册" id="reg_btn">
+    <input type="button" value="登录" id="login_btn">
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+           
+            $('#reg_btn').click(function(){
+                var userVal=$('#user').val();
+                var passVal=$('#pass').val();
+                if(userVal==''||passVal==''){
+                    alert('用户名密码不能为空')
+                    return;
+                }
+                $.ajax({
+                    url:'http://localhost:8080/user',
+                    data:{act:'reg',user:userVal,pass:passVal},
+                    type:'get',
+                    success:function(data){
+                        if(JSON.parse(data).ok){
+                            alert('注册成功')
+                        }else{
+                            alert(JSON.parse(data).msg)
+                        }
+                        console.log(JSON.parse(data))
+                        
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                })
+            })
+            //登录
+            $('#login_btn').click(function(){
+                var userVal=$('#user').val();
+                var passVal=$('#pass').val();
+                if(userVal==''||passVal==''){
+                    alert('用户名密码不能为空')
+                    return;
+                }
+                $.ajax({
+                    url:'http://localhost:8080/user',
+                    data:{act:'login',user:userVal,pass:passVal},
+                    type:'get',
+                    success:function(data){
+                        if(JSON.parse(data).ok){
+                            alert('登录成功')
+                        }else{
+                            alert(JSON.parse(data).msg)
+                        }
+                        console.log(JSON.parse(data))
+                        
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

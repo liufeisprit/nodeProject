@@ -1,11 +1,20 @@
 var express=require('express')
 var app=express()
-app.get('/',function(req,res){
-    res.send('Hello,World')
+var admin = express(); // the sub app
+
+admin.get('/', function (req, res) {
+  console.log(admin.mountpath); // /admin
+  res.send('Admin Homepage');
 })
-app.listen(3000,function(){
-    console.log('Example app listening on port 3000!')
+
+// app.use('/admin', admin)
+var secret=express();
+secret.get('/',function(req,res){
+    console.log(secret.mountpath)
+    res.send('Secret HomePage')
 })
+admin.use('/secret',secret)
+app.use(['/admin','/manager'],admin)
 // var koa = require('koa');
 // var app = koa();
 
@@ -15,4 +24,7 @@ app.listen(3000,function(){
 //     this.body = data;
 // });
 
-// app.listen(3000);
+app.listen(3000);
+//多层级路由分发
+
+
