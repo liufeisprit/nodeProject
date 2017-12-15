@@ -19,6 +19,8 @@ http.createServer((req,res)=>{
         var url=obj.pathname;//user?
         var GET=obj.query//{user:'213',pass:asdad}
         var POST=querystring.parse(str)//{user:'213',pass:asdad}
+        // console.log(obj)
+        // console.log(GET)
         // console.log(GET.act)
         if(url=='/user'){
             //接口
