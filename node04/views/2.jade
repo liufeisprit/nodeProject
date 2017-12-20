@@ -1,0 +1,20 @@
+html
+    head
+        script
+            include a.js
+        //- include test.txt
+        style .active{background:blue}
+        
+        //- include 引入外部文件
+    body
+        div.
+            div
+        aaa 我的名字是  #{name+name2}
+        div(style=styleJson,class=classArr) CHINA
+        div(style=styleJson,class=classArr,class='active') CHINA
+        div(style=styleJson,class=classArr) CHINA
+        |aaa
+        |bbb
+        |ccc
+        //-前面加|表示不用标签去解析
+        //- 前面加 . 代表下一级的内容原样输出

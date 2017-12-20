@@ -1,0 +1,13 @@
+html
+    head
+    body
+    //- 在jade里面直接写js -表示是一段代码 直接写=表示输出变量
+    -var a=10
+    -var b=5
+    div 结果是 #{a+b}
+    div=a
+    //- 循环输出变量
+    -for(var i=0;i<arr.length;i++)
+        div=arr[i]
+    
+    
