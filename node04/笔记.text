@@ -1,0 +1,9 @@
+模板引擎 生成页面
+jade 破坏式的
+ejs 保留式的
+jade 1 根据缩进划分层级 2 属性用()表示，用逗号分离 *style={} *class=[]
+内容嵌套
+ div zzz
+    span bbb
+jade.render('字符串')
+jade.renderfile('模板文件名',参数)

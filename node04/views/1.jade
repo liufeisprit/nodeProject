@@ -1,0 +1,27 @@
+html
+    head(lang='en')
+        meta(charset="utf-8")
+        style
+        //- script alert(1)
+        //- link(rel="stylesheet", href="a.css")
+    body
+        div
+            ul 
+                li
+                    input(type="text",id="text1","value"=123)
+                li
+                    a(href="https://www.baidu.com/") 百度
+                li
+            div(style="color:red")  aaa 
+                div bbb
+            div(style={color:'red'}) cscc
+            //- 这样写也可以 json的写法 但是只是style属性可以用
+            div&attributes({title:'123',class:'aaa',name:'liu'}) 124
+            //- 用json写法 前面要加 &attributes
+            div(class="aad") ddd
+            div(class=['asd','sdad']) eee
+            //- class 属性也可以这样写 数组写法
+            div.aaaa fff
+            div#zxcz www
+        div
+    
