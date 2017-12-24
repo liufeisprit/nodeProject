@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title jade测试页面
+        style.
+            div{color:red;width:100px;height:100px;float:left;text-aligin:center}
+            .last{clear:left}
+    body
+        -var a=0;
+        while a<12
+            if a%4==0 && a!=0
+                div.last #{a++}
+            else
+                div=a++
