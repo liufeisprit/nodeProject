@@ -16,8 +16,9 @@ http.createServer((req,res)=>{
     })
     req.on('end',function(){
         var obj=urlLib.parse(req.url,true);
+        console.log(obj)
         var url=obj.pathname;//user?
-        var GET=obj.query//{user:'213',pass:asdad}
+        var GET=obj.query//{user:'213',pass:asdad} 问号之后的参数
         var POST=querystring.parse(str)//{user:'213',pass:asdad}
         // console.log(obj)
         // console.log(GET)

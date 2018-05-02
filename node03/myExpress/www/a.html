@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+   
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
     asda
+    
+    <script>
+        
+        function showData(data) {
+            console.log(data)
+        }
+        function addScriptTag(src){
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.src = src;
+            document.body.appendChild(script);
+        };
+        window.onload = function(){
+            addScriptTag('http://localhost:8080/test?callback=showData');
+        };
+        //跨域请求只有get jquerytype写成post也会变成get callback方法要是全局的 必须要在加载js之前
+        // console.log($)
+        // $.ajax({
+        //     type:'get',
+        //     dataType:'jsonp',
+        //     jsonp: "callback",  
+        //     jsonpCallback: "showData",
+        //     url:"http://localhost:8080/test",
+        //     success:function(data){
+        //         console.log(data)
+        //     }
+        // })
+    </script>
 </body>
 </html>

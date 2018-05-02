@@ -8,6 +8,9 @@ var users = {
         'liu': '123456'
     } //存储用户数据
     //user:123,pass:123456
+server.get('/',(req,res,next)=>{
+    res.send('3000')
+})
 server.get('/login', (req, res) => {
     console.log(req.query) //req.query直接把get数据分割开来{ user: '123', pass: '123' }
     var user = req.query['user']
@@ -24,4 +27,5 @@ server.get('/login', (req, res) => {
 })
 
 server.use(expressStatic('./www'))
-server.listen(8080)
+
+server.listen(3000)
